@@ -1,4 +1,5 @@
-const { response , request } = require('express')
+const { response , request } = require('express');
+const { stringify } = require('nodemon/lib/utils');
 const Project = require('../models/projects')
 
 const projectsGet = async (req = request,  res = response) => {
@@ -20,8 +21,10 @@ const projectsGet = async (req = request,  res = response) => {
 const projectPost = async ( req = request, res = response) => {
 
     const {...fields} = req.body
-    const project = new Project({...fields})
 
+  
+    const project = new Project({...fields})
+    
     await project.save()
 
 

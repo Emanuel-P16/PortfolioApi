@@ -23,9 +23,10 @@ const ProjectSchema = Schema({
         // required: [true,'El nombre es obligatorio']
     },
     technology: {
-        type: String,
-         required: [true,'tech is mandatory']
-    },
+        type: [String],
+        required: true
+        }, 
+   
     description: {
         type: String,
         default: 'Descripción no ingresada'
