@@ -12,6 +12,7 @@ class Server{
         this.port = process.env.PORT;
         this.projectPath = '/api/projects'
         this.usersPath = '/api/users'
+        this.questsPath = '/api/quests'
 
 
         this.conectarDB();
@@ -31,6 +32,7 @@ class Server{
      routes(){
          this.app.use(this.projectPath,require('../routes/projects'))
          this.app.use(this.usersPath,require('../routes/users'))
+         this.app.use(this.questsPath,require('../routes/quests'))
      }
 
 
