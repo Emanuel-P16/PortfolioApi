@@ -12,7 +12,8 @@ const QuestsSchema = Schema ( {
         required: true
     },
     user_id:{
-        type: String,
+        type: Schema.Types.ObjectId,
+        ref: 'Users',
         required: true
     },
     completed: {
