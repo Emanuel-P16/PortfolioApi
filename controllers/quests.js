@@ -2,7 +2,7 @@ const {request,response} = require('express')
 const Quests = require('../models/quests')
 // const Quest = require('../models/quests')
 const questsGet = async (req = request, res = response) => {
-        const quests = await Quests.find({user_id:'test1'})
+        const quests = await Quests.find().populate('user_id','name')//({user_id:'test1'})
     res.json({
         msg: 'get',
         quests
@@ -26,8 +26,8 @@ const questsPut = async (req=request, res=response) => {
 } 
 const questsPost= async (req=request, res=response) => {
 
-    const {_id,...quest} = req.body
-
+    const quest = req.body
+    console.log(quest)
     const quests = new Quests({...quest})
 
     await quests.save()
