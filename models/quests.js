@@ -1,8 +1,10 @@
+const { type } = require('express/lib/response')
 const { Schema, model } = require('mongoose')
 
 
 
 const QuestsSchema = Schema ( {
+    
     name:{
         type: String,
         required: true
@@ -21,10 +23,12 @@ const QuestsSchema = Schema ( {
         required: true,
         default : false
     },
-    objectives : {
-        type: [String]
-        
-    }
+    objectives: [
+        {
+            name: String,
+            completed: Boolean
+        }
+    ]
 })
 
 module.exports = model ('Quests',QuestsSchema)
