@@ -7,7 +7,7 @@ const { questsGet, questsPut, questsPost, questsDelete } = require('../controlle
 const router = Router()
 
 router.get('/',questsGet)
-router.put('/',questsPut)
+router.put('/:id',questsPut)
 router.post('/',questsPost)
 router.delete('/',questsDelete)
 
