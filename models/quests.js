@@ -16,7 +16,10 @@ const QuestsSchema = Schema ( {
     user_id:{
         type: Schema.Types.ObjectId,
         ref: 'Users',
-        required: true
+        
+    },
+    google_id:{
+        type: String
     },
     completed: {
         type: Boolean,
